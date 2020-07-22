@@ -75,14 +75,14 @@ public class FcmToken implements IFcmToken {
     }
 
     protected void refreshToken() {
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( new OnSuccessListener<InstanceIdResult>() {
-            @Override
-            public void onSuccess(InstanceIdResult instanceIdResult) {
-                sToken = instanceIdResult.getToken();
-                if(BuildConfig.DEBUG) Log.i(LOGTAG, "FCM has a new token" + "=" + sToken);
-                sendTokenToJS();
-            }
-        });
+        // FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( new OnSuccessListener<InstanceIdResult>() {
+        //     @Override
+        //     public void onSuccess(InstanceIdResult instanceIdResult) {
+        //         sToken = instanceIdResult.getToken();
+        //         if(BuildConfig.DEBUG) Log.i(LOGTAG, "FCM has a new token" + "=" + sToken);
+        //         sendTokenToJS();
+        //     }
+        // });
     }
 
     protected void sendTokenToJS() {
